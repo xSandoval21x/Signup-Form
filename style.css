@@ -1,0 +1,302 @@
+@font-face {
+    font-family: Norse;
+    src: url(/fonts/Norse-Bold.otf);
+}
+
+@font-face {
+    font-family: poppins-regular;
+    src: url(fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: poppins-sb;
+    src: url(fonts/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: nunito;
+    src: url(fonts/static/Nunito-Regular.ttf);
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2,
+h2 span {
+    font-size: 1.2rem;
+    font-family: poppins-regular;
+    max-width: 40em;
+    max-width: 42ch;
+    font-weight: bolder;
+}
+
+p,
+span {
+    font-family: nunito;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+}
+
+#left-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 45vw;
+    height: 100%;
+    background-image: url(steve-busch--u2cn3h8CvA-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#main-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    width: 55vw;
+    margin-left: auto;
+    background-color: #f1f1f1;
+}
+
+#main-section > div {
+    padding: 0 2rem;
+}
+
+#banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    top: 15%;
+    height: 200px;
+    width: 100%;
+}
+
+#logo {
+    width: 100px;
+}
+
+#logo > img {
+    width: 100%;
+}
+
+#title > span {
+    font-family: Norse;
+    font-size: 7rem;
+    color: #fff;
+}
+
+#img-src {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 2em;
+    width: 100%;
+    opacity: 0.6;
+}
+
+#img-src > span {
+    color: #dbdbdb
+}
+
+#img-src a {
+    color: #20f0ff;
+}
+
+#form-container {
+    background: #fff;
+    box-shadow: 0 2px 5px #afafaf;
+    margin-bottom: 2rem;
+}
+
+#form-fields-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 100px;
+    max-width: 100px;
+    margin-bottom: 1.5em;
+}
+
+#form-fields-container > div {
+    display: flex;
+    flex-direction: column;
+    width: 34ch;
+    margin: 5px 0;
+}
+
+#form-fields-container label {
+    font-family: poppins-sb;
+    letter-spacing: 0.1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #707070;
+}
+
+input:not([type="submit"]) {
+    font-family: poppins-regular;
+    padding: 5px;   
+    border-style: solid;
+    height: 1.2rem;
+    border-radius: 5px;
+    border-color: #d4d4d4;
+    border-width: 1px;
+}
+
+input:not([type="submit"]):focus {
+    border-color: #007fb1;
+    outline: 1px solid #007fb1;
+    box-shadow: 1px 2px 5px #a8a8a8;
+}
+
+input[type="submit"] {
+    font-family: poppins-sb;
+    background-color: #76c8ff;
+    border: none;
+    color: #fff;
+    height: 2.5rem;
+    width: 205px;
+    font-size: 1.1rem;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    box-shadow: 1px 2px 5px #76c8ff;
+}
+
+input[type="submit"]:active {
+    transform: scale(0.98);
+    background-color: #68b2e4;
+    box-shadow: 1px 2px 5px #68b2e4;
+}
+
+/* Invalid form field sytles */
+input.invalid {
+    border-color: #900;
+    background-color: #fdd;
+  }
+  
+  input:focus:invalid {
+    outline: none;
+  }
+  
+  /* This is the style of our error messages */
+  .error {
+    width: 100%;
+    padding: 0;
+  
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+  }
+  
+  .error.active {
+    padding: 0.3em;
+  }
+
+@media screen and (max-width: 1240px) {
+    #form-fields-container {
+        grid-column-gap: 30px;
+        max-width: 30px;
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    #form-fields-container {
+    /*single column layout*/
+      display: flex;
+      flex-direction: column;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    
+    #left-section {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    #left-section::before {
+        animation: bounce 1s ease infinite;
+        bottom: 3rem;
+        color: #fff;
+        content: '╲╱';
+        font-size: 2rem;
+        height: 4rem;
+        left: 50%;
+        letter-spacing: -1px;
+        line-height: 4rem;
+        margin-left: -3rem;
+        opacity: 0.8;
+        position: absolute;
+        text-align: center;
+        width: 6rem;
+      }
+      
+      @keyframes bounce {
+        50% {
+          transform: translateY(-50%);
+        }
+      }
+
+    #banner {
+        top: 33vh;
+    }
+    
+    #main-section {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        align-items: center;
+        box-sizing: border-box;
+        flex-grow: 1;
+    }
+
+    #form-container {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #sign-up-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 40ch) {
+    #form-fields-container > div {
+        width: auto;
+    }
+
+    input[type="submit"] {
+        width: auto;
+        font-size: 1rem;
+        box-sizing: border-box;
+    }
+}
